@@ -10,6 +10,9 @@
 
 <body>
     <button id="grow">Grow</button>
+    <button id="grow2">Grow2</button>
+    <button id="create">Create</button>
+
     <script>
         var x = [];
 
@@ -21,6 +24,27 @@
         }
 
         document.getElementById('grow').addEventListener('click', grow);
+
+        var y = [];
+
+        function grow2() {
+            y.push(new Array(1000000).join('x'));
+        }
+
+        document.getElementById('grow2').addEventListener('click', grow2);
+
+        var detachedNodes;
+
+        function create() {
+            var ul = document.createElement('ul');
+            for (var i = 0; i < 10; i++) {
+                var li = document.createElement('li');
+                ul.appendChild(li);
+            }
+            detachedTree = ul;
+        }
+
+        document.getElementById('create').addEventListener('click', create);
     </script>
 </body>
 
